@@ -8,28 +8,34 @@ body{
     width: 100%;
     height: 95vh;
     text-align: center;
-    position:absolute;
-    margin-top: 0px;
+    /* position:absolute; */
+    /* margin-top: 0px; */
 }
 
 #title {
     /* background-color: red; */
     text-align: center;
-    /* position: absolute; */
+    position: absolute;
     /* top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
     margin: 0 auto;
-    margin-top: -30px;
+    margin-top: 50px;
     height: auto;
     width: 100%;
 }
 
 #Passion {
-    font-size: 224px;
+    font-size: 124px;
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
     height: 0px;
+}
+
+@media (min-width: 1200px) {
+    #Passion {
+      font-size: 224px;
+    }
 }
 
 #go {
@@ -60,9 +66,10 @@ body{
     top: 50%;
     left: 50%;
     /* transform: translate(-50%, -50%); */
-    padding: 25px 100px 25px 100px;
-    height: 500px;
-    width:700px;
+    padding: 25px 100px 25px 25px;
+    height: 300px;
+    width:300px;
+    text-align: center;
 }
 
 #passionText {
@@ -73,6 +80,17 @@ body{
     text-align: left;
     margin-top: 0px;
     margin-left: 0px;
+}
+
+@media (min-width: 1200px) {
+    #urPassion {
+        height: 500px;
+        width: 700px;
+    }
+
+    #afterControls {
+        display: flexbox;
+    }
 }
 
 #after {
@@ -88,6 +106,8 @@ body{
     top: 50%;
     left: 50%;
     margin-top: 20px;
+    /* text-align: center; */
+    /* display: block; */
 }
 
 #afterControls button{
@@ -99,6 +119,10 @@ body{
     border-style: solid;
     border-color: #ffffff;
     border-width: 0 0 0 0;
+    /* display: block;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto; */
 }
 
 #afterControls button:hover {
