@@ -5,7 +5,7 @@ body{
 }
 
 #land {
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     width: 100%;
     height: 95vh;
     text-align: center;
@@ -16,7 +16,7 @@ body{
 }
 
 #title {
-    background-color: red;
+    /* background-color: red; */
     text-align: center;
     position: absolute;
     /* top: 50%;
