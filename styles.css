@@ -1,6 +1,7 @@
 body{
     background-color: #2153D4;
     overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 #land {
