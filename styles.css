@@ -1,6 +1,7 @@
 body{
     background-color: #2153D4;
     overflow-y: hidden;
+    overflow: hidden;
 }
 
 #land {
@@ -9,6 +10,7 @@ body{
     height: 95vh;
     text-align: center;
     overflow-y: hidden;
+    overflow: hidden;
     /* position:absolute; */
     /* margin-top: 0px; */
 }
