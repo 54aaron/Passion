@@ -34,6 +34,9 @@ document.querySelector("#go").addEventListener("click", async function(){
         }
     })
 
+    $("body").toggleClass("blue");
+    $("body").toggleClass("pink");
+
     //Show sentence and handle reverse
     slideUp.play()
     slideUp.finished.then(() => {
@@ -43,9 +46,14 @@ document.querySelector("#go").addEventListener("click", async function(){
 })
 
 document.querySelector("#restart").addEventListener("click", function(){
+
+
+
     slideUp.play()
     slideUp.finished.then(() => {
         slideUp.reverse();
+        $("body").toggleClass("blue");
+        $("body").toggleClass("pink");
       })
 })
 
@@ -61,44 +69,6 @@ document.querySelector("#download").addEventListener("click", function(){
         anchor.remove()
     });
 
-})
-
-document.querySelector("#share").addEventListener("click", function(e){
-
-    // html2canvas(element).then((canvas) => {
-    //     const base64image = canvas.toDataURL("image/png");
-    //     var anchor = document.createElement('a');
-    // });
-
-    // document.getElementById("share").setAttribute("data-url", "https://pbs.twimg.com/media/F5nn1fhXMAAQ4dE?format=jpg&name=900x900")
-
-    // var share = $('#after').append('<a data-sharer="twitter" data-title="My Passion" data-hashtags="Passion" data-url="/">Share on Twitter</a>');
-    // share.click();
-    // var anchor = document.createElement('a') 
-    // anchor.setAttribute("data-sharer", "twitter")
-    // anchor.setAttribute("data-title", "My Passion")
-    // anchor.setAttribute("data-url", "/")
-    // anchor.click()
-    // anchor.remove()
-
-    // window.Sharer.init();
-    e.stopPropagation();
-
-    var menu = $("#social-options");
-
-    if( menu.css('display') == 'none' ){
-        $('#social-options').css('display', 'block');
-    } else {
-        $('#social-options').css('display', 'none');
-    }
-})
-
-$("body").click(function(){
-    var menu = $("#social-options");
-
-    if( menu.css('display') == 'block' ){
-        $('#social-options').css('display', 'none');
-    }
 })
 
 let slideUp = anime({
