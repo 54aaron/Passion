@@ -46,9 +46,6 @@ document.querySelector("#go").addEventListener("click", async function(){
 })
 
 document.querySelector("#restart").addEventListener("click", function(){
-
-
-
     slideUp.play()
     slideUp.finished.then(() => {
         slideUp.reverse();
