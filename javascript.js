@@ -1,3 +1,10 @@
+const origin = "file://wsl%24/Ubuntu-18.04/home/aaron/digi_proj/passion/index.html"
+
+// const request = `https://random-word-api.herokuapp.com/word/${part}`
+const headersList = {'Access-Control-Allow-Origin': 'file://wsl%24/Ubuntu-18.04/home/aaron/digi_proj/passion/index.html',
+                    'Access-Control-Allow-Methods': 'GET, POST',
+                    'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'}
+
 document.querySelector("#go").addEventListener("click", async function(){
     
     //declare arrays with parts of speech and empty arrays
@@ -7,20 +14,23 @@ document.querySelector("#go").addEventListener("click", async function(){
 
     //make call to api and retrieve promises
     speech.map((part) => {
-        promises.push( fetch(`https://random-words-api.vercel.app/word/${part}`) )
+        promises.push( fetch( `https://random-word-api.herokuapp.com/word`))
     })
 
     const data = await Promise.all(promises);
 
     //convert JSON and retrieve promises
     data.map((obj) => {
+        // console.log(obj)
         words.push(obj.json())
     })
 
     const objs = await Promise.all(words)
 
+    console.log(objs)
+
     //Sentence construction ... maybe a more elegant way to go about this but idgaf
-    sentence =  `To <i>${objs[0][0].word}</i> a <u>${objs[1][0].word}</u> ${objs[2][0].word}`
+    sentence =  `To <i>${objs[0][0]}</i> a <u>${objs[1][0]}</u> ${objs[2][0]}`
     document.querySelector("#passionText").innerHTML = sentence
 
     $('#urPassion').textfill({
@@ -55,7 +65,7 @@ document.querySelector("#restart").addEventListener("click", function(){
 })
 
 document.querySelector("#download").addEventListener("click", function(){
-    var element = document.getElementById('urPassion');
+    var element = document.getElementById('body');
 
     html2canvas(element).then((canvas) => {
         const base64image = canvas.toDataURL("image/png");
