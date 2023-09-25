@@ -55,6 +55,20 @@ document.querySelector("#go").addEventListener("click", async function(){
 
 })
 
+document.querySelector("#info-button").addEventListener("click", function(){
+    $("#info").show()
+    $("#Passion").hide()
+    $("#info-button").hide()
+    $w("#go").hide()
+})
+
+document.querySelector("#info-close").addEventListener("click", function(){
+    $("#info").hide()
+    $("#Passion").show()
+    $("#info-button").show()
+    $w("#go").show()
+})
+
 document.querySelector("#restart").addEventListener("click", function(){
     slideUp.play()
     slideUp.finished.then(() => {

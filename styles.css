@@ -1,7 +1,57 @@
-body{
+body {
     overflow-y: hidden;
     overflow: hidden;
 }
+
+#info-button {
+    position: relative;
+    margin-bottom: 0px;
+    /* top: 20%; */
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+}
+
+#info-button:hover {
+    fill:#F3BEF1;
+    background-color: #1e4bbf;
+}
+
+#info{
+    width: 300px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    padding: 50px;
+    display: none;
+    /* visibility: hidden; */
+
+    background-color: #F3BEF1;
+    border:5px solid #2153D4;
+    box-shadow:-20px 20px #F3BEF1;
+
+    text-align: left;
+    font-size: 20px;
+    color: #2153D4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#info a{
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+#info a:hover{
+    text-decoration-thickness:  5px;
+    cursor: pointer;
+}
+
+path {
+    fill:#FFFFFF
+}
+
 
 .blue{
     background-color: #2153D4;
@@ -37,6 +87,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: #ffffff;
     height: 0px;
+    background-color: red;
 }
 
 @media (min-width: 1200px) {
