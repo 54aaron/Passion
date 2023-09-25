@@ -59,14 +59,14 @@ document.querySelector("#info-button").addEventListener("click", function(){
     $("#info").show()
     $("#Passion").hide()
     $("#info-button").hide()
-    $w("#go").hide()
+    $("#go").hide()
 })
 
 document.querySelector("#info-close").addEventListener("click", function(){
     $("#info").hide()
     $("#Passion").show()
     $("#info-button").show()
-    $w("#go").show()
+    $("#go").show()
 })
 
 document.querySelector("#restart").addEventListener("click", function(){
