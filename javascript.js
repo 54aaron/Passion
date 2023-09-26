@@ -1,5 +1,7 @@
 const origin = "file://wsl%24/Ubuntu-18.04/home/aaron/digi_proj/passion/index.html"
 
+const pass = "bcfpvm9ifbrs3pa6gp9djaw3of2dt3k6glnbthfnmswkrldre"
+
 // const request = `https://random-word-api.herokuapp.com/word/${part}`
 const headersList = {'Access-Control-Allow-Origin': 'file://wsl%24/Ubuntu-18.04/home/aaron/digi_proj/passion/index.html',
                     'Access-Control-Allow-Methods': 'GET, POST',
@@ -14,7 +16,7 @@ document.querySelector("#go").addEventListener("click", async function(){
 
     //make call to api and retrieve promises
     speech.map((part) => {
-        promises.push( fetch( `https://random-word-api.herokuapp.com/word`))
+        promises.push( fetch( `https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&includePartOfSpeech=${part}&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&limit=1&api_key=${pass}`))
     })
 
     const data = await Promise.all(promises);
@@ -30,7 +32,7 @@ document.querySelector("#go").addEventListener("click", async function(){
     console.log(objs)
 
     //Sentence construction ... maybe a more elegant way to go about this but idgaf
-    sentence =  `To <i>${objs[0][0]}</i> a <u>${objs[1][0]}</u> ${objs[2][0]}`
+    sentence =  `To <i>${objs[0][0].word}</i> a <u>${objs[1][0].word}</u> ${objs[2][0].word}`
     document.querySelector("#passionText").innerHTML = sentence
 
     $('#urPassion').textfill({
